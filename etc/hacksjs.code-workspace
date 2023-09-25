@@ -1,0 +1,331 @@
+{
+
+  "extensions": {
+
+    // The following extensions are RECOMMENDED for the Hacks.js project.
+    // To load the recommended extensions, go to the *Workspace Recommendations*
+    // section of VS Code's *Extensions* panel.
+    // https://code.visualstudio.com/docs/editor/extension-marketplace#_workspace-recommended-extensions
+
+    "recommendations": [
+
+      // AsciiDoc – Provides language support for AsciiDoc.
+      "asciidoctor.asciidoctor-vscode",
+
+      // EditorConfig – .editorconfig file support.
+      "editorconfig.editorconfig",
+
+      // ESLint – Integrates the ESLint tool.
+      "dbaeumer.vscode-eslint",
+
+      // Jest – Run Jest from inside VS Code.
+      "orta.vscode-jest",
+
+      // Code Spell Checker – Spelling checker for all source code.
+      "streetsidesoftware.code-spell-checker",
+
+      // NPM Intellisense – Adds autocompletion for imported Node modules.
+      "christian-kohler.npm-intellisense",
+
+      // Render Line Endings – Displays line ending symbols and other white space characters.
+      "medo64.render-crlf",
+
+      // @deprecated: This project does not use Prettier.
+      // Prettier – Opinionated code formatter for JavaScript/TypeScript projects.
+      // "esbenp.prettier-vscode",
+
+      // Pretty TypeScript Errors – Prettify TypeScript errors in VS Code hints.
+      "yoavbls.pretty-ts-errors",
+
+      // Todo Tree – Browse TODO, FIXME and other comments.
+      "gruntfuggly.todo-tree"
+
+    ]
+
+  },
+
+  "folders": [
+    {
+      "name": "hacksjs/.github",
+      "path": "../../.github"
+    },
+    {
+      "name": "hacksjs/antora-ui",
+      "path": "../../antora-ui"
+    },
+    {
+      "name": "hacksjs/decisions",
+      "path": "../../decisions"
+    },
+    {
+      "name": "hacksjs/dev",
+      "path": "../../dev"
+    },
+    {
+      "name": "hacksjs/docs.hacksjs.com",
+      "path": "../../docs.hacksjs.com"
+    },
+    {
+      "name": "hacksjs/hacksjs",
+      "path": "../../hacksjs"
+    },
+    {
+      "name": "hacksjs/hacksjs.com",
+      "path": "../../hacksjs.com"
+    },
+    {
+      "name": "hacksjs/node",
+      "path": "../../node"
+    },
+    {
+      "name": "hacksjs/universal",
+      "path": "../../universal"
+    },
+    {
+      "name": "hacksjs/web",
+      "path": "../../web"
+    },
+    {
+      "name": "hacksjs/workspace",
+      "path": "../../workspace"
+    },
+  ],
+
+  "launch": {
+
+    // Global debug launch configuration, used as an alternative to `launch.json`
+    // when the debugging config is shared across a whole workspace.
+
+    // This configuration enables `vscode-jest` as the debugging tool.
+    // https://go.microsoft.com/fwlink/?linkid=830387
+    // https://code.visualstudio.com/docs/nodejs/nodejs-debugging#_launch-configurations-for-common-scenarios
+
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "node",
+        "name": "vscode-jest-tests.v2",
+        "request": "launch",
+        "args": [
+          "--runInBand",
+          "--watchAll=false",
+          "--testNamePattern",
+          "${jest.testNamePattern}",
+          "--runTestsByPath",
+          "${jest.testFile}"
+        ],
+        "cwd": "${workspaceFolder}",
+        // Debugging does not work well with externalTerminal:
+        "console": "integratedTerminal",
+        "internalConsoleOptions": "neverOpen",
+        "program": "${workspaceFolder}/node_modules/.bin/jest",
+        "windows": {
+          "program": "${workspaceFolder}/node_modules/jest/bin/jest"
+        }
+      }
+    ]
+  },
+
+  "settings": {
+
+    // === BUILT-IN SETTINGS ===
+
+    // Where possible, automatically apply code fixes. This enables auto-fix
+    // functionality in extensions like EditorConfig and ESLint.
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true
+    },
+
+    // Render vertical guidelines at 80, 100 120 columns. Code lines SHOULD be
+    // less than 80 characters long and MUST be less than 100 characters. To aid
+    // inline readability of JSDOc notations, comment lines MAY be up to 120
+    // characters in length.
+    "editor.rulers": [
+      80,
+      100,
+      120
+    ],
+
+    // Transform tab indents to two spaces. Enforce this — don't allow VS Code
+    // to override based on what it thinks is the existing indentation format of
+    // each file.
+    "editor.detectIndentation": false,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+
+    // Editor config overrides for JavaScript files.
+    "[javascript]": {
+
+      // Use the ESLint extension as the default JavaScript formatter.
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+
+      // Only format on save.
+      "editor.formatOnPaste": false,
+      "editor.formatOnSave": true,
+      "editor.formatOnType": false,
+
+    },
+
+    // Editor config overrides for TypeScript files.
+    "[typescript]": {
+
+      // Use the ESLint extension as the default TypeScript formatter.
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+
+      // Only format on sace.
+      "editor.formatOnPaste": false,
+      "editor.formatOnSave": true,
+      "editor.formatOnType": false,
+
+    },
+
+    // === BUILT-IN LANGUAGE-SPECIFIC SETTINGS ===
+
+    // Enable formatting and validation of JavaScript code.
+    "javascript.format.enable": true,
+    "javascript.validate.enable": true,
+
+    // Disable the TypeScript type checker in all JavaScript files by default.
+    // (This is the default behavior anyway.) Disabling this means that JavaScript
+    // files MUST include a `@ts-check` comment at the top to opt-in to VS Code's
+    // built-in `tsc` type checker instance, which will infer type information from
+    // the code and JSDoc-style notations.
+    "js/ts.implicitProjectConfig.checkJs": false,
+
+    // === EXTENSION SETTINGS ===
+
+    // Settings for the AsciiDoc extension.
+    // https://marketplace.visualstudio.com/items?itemName=asciidoctor.asciidoctor-vscode
+    "asciidoc.preview.refreshInterval": 0,
+    "asciidoc.preview.useEditorStyle": false,
+    "asciidoc.preview.scrollPreviewWithEditor": false,
+    "asciidoc.preview.scrollEditorWithPreview": false,
+    "asciidoc.preview.markEditorSelection": false,
+    "asciidoc.preview.doubleClickToSwitchToEditor": false ,
+
+    // Settings for the Render Line Endings extension.
+    // https://marketplace.visualstudio.com/items?itemName=medo64.render-crlf
+
+    // Character used to display LF (line-feed) line ending
+    // (aka Linux/Mac line ending).
+    "code-eol.newlineCharacter": "↓",
+
+    // Character used to display CR (carriage-return) line ending
+    // (aka old Macintosh line ending).
+    "code-eol.returnCharacter" : "←",
+
+    // Character used to display CRLF (carriage-return, line-feed) line ending
+    // (aka Windows line ending).
+    "code-eol.crlfCharacter"   : "↵",
+
+    // Settings for the Code Spell Checker extension.
+    // https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker
+
+    // Spell check language. For consistency with our technical documentation,
+    // we write in American English.
+    "cSpell.language": "en-US",
+
+    // File paths to not spell check.
+    "cSpell.ignorePaths": [
+      ".git",
+      ".vscode",
+      "*.log"
+    ],
+
+    // Disable spelling errors on compound words like 'errormessage' and
+    // 'builddir'. This setting makes the cSpell spell check unreliable and so
+    // we must delimit words in code, eg 'errorMessage` or `build_dir`.
+    "cSpell.allowCompoundWords": false,
+
+    // Custom dictionary.
+    "cSpell.customDictionaries": {
+      "hacksjsDictionary": {
+        "name": "Hacks.js Dictionary",
+        "path": "../var/cspell/dictionary.txt",
+        "scope": "workspace",
+        "addWords": true
+      }
+    },
+
+    // Spellings to always ignore. These are not real words, but are names or
+    // identifiers of some kind: people's names, domain names, URL slugs, etc.
+    "cSpell.ignoreWords": [
+      "hackscorp",
+      "hacksjs",
+      "kieran",
+      "kieranpotts",
+      "nirvarnia",
+      "potts",
+    ],
+
+    // Spellings always considered incorrect.
+    // This is useful for common spelling errors.
+    // For example, "hte" should be "the".
+    "cSpell.flagWords": [
+      "hte",
+      "vscode"
+    ],
+
+    // Settings for the ESLint extension.
+    // https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+
+    // Enable support of the new flat file configuration format,
+    // `eslint.config.js`, available since ESLint v8.21.
+    // "eslint.experimental.useFlatConfig": true,
+
+    // Enable ESLint as a code formatter.
+    // "eslint.format.enable": true,
+
+    // Use ESLint to validate both JS and TS source files.
+    // "eslint.validate": ["javascript", "typescript"],
+
+    // Settings for the vscode-jest extension.
+    // https://github.com/jest-community/vscode-jest
+
+    // Jest is configured to run tests via VS Code as follows:
+    // - Tests are NOT run automatically when VS Code is started up.
+    // - Tests are NOT run automatically when source files or test files change.
+    // - Therefore, test runs must be triggered manually in all cases.
+    //
+    // https://github.com/jest-community/vscode-jest#autorun
+    "jest.autoRun": "off",
+
+    // Don't automatically show terminal on test run.
+    "jest.autoRevealOutput": "off",
+
+        // Annoyingly, if this extension is enabled in a multi-root workspace, by default
+    // Jest will try to find a test suite configuration in every project in the workspace,
+    // and reveal terminal errors for every project it does not. So we must explicitly
+    // DISABLE the Jest extension for all repos in which it is not needed.
+    "jest.disabledWorkspaceFolders": [
+      "hacksjs/.github",
+      "hacksjs/antora-ui",
+      "hacksjs/decisions",
+      "hacksjs/dev",
+      "hacksjs/docs.hacksjs.com",
+      "hacksjs/hacksjs.com",
+      "hacksjs/node",
+      "hacksjs/universal",
+      "hacksjs/web",
+      "hacksjs/workspace",
+    ],
+
+    // This is the command used to kick off tests in the terminal. The vscode-jest
+    // extension will pass additional options to this command at runtime, so we
+    // must append "--" to the "npm run" command to ensure the injected options
+    // get forwarded tothe "jest" command.
+    //
+    // https://github.com/jest-community/vscode-jest#jestcommandline
+    "jest.jestCommandLine": "npm run test -- ",
+
+    // Settings for the ToDo Tree extension.
+    // https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree
+
+    // Use only `TODO` notations. This setting works only in workspace roots.
+    "todo-tree.general.tags": [
+      "TODO",
+    ]
+
+  }
+
+}
