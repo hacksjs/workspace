@@ -179,6 +179,15 @@
 
     },
 
+    // Remove some repositories from VS Code's built-in Git GUI.
+    "git.ignoredRepositories": [],
+
+    // Prompt for user confirmation before committing to certain "protected"
+    // branches.
+    "git.branchProtection": [
+      //"dev"
+    ],
+
     // === BUILT-IN LANGUAGE-SPECIFIC SETTINGS ===
 
     // Enable formatting and validation of JavaScript code.
@@ -249,14 +258,7 @@
 
     // Spellings to always ignore. These are not real words, but are names or
     // identifiers of some kind: people's names, domain names, URL slugs, etc.
-    "cSpell.ignoreWords": [
-      "hackscorp",
-      "hacksjs",
-      "kieran",
-      "kieranpotts",
-      "nirvarnia",
-      "potts",
-    ],
+    "cSpell.ignoreWords": [],
 
     // Spellings always considered incorrect.
     // This is useful for common spelling errors.
@@ -293,7 +295,7 @@
     // Don't automatically show terminal on test run.
     "jest.autoRevealOutput": "off",
 
-        // Annoyingly, if this extension is enabled in a multi-root workspace, by default
+    // Annoyingly, if this extension is enabled in a multi-root workspace, by default
     // Jest will try to find a test suite configuration in every project in the workspace,
     // and reveal terminal errors for every project it does not. So we must explicitly
     // DISABLE the Jest extension for all repos in which it is not needed.
