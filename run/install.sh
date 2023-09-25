@@ -31,7 +31,7 @@ repo_path=$(dirname "${run_path}")
 # which is expected to the immediate parent directory to the `workspace` repo.
 project_path=$(readlink -f "${repo_path}/../")
 
-source "${run_path}/inc/repos.sh"
+source "${run_path}/_/repos.sh"
 
 for repo in ${repos[@]}; do
 

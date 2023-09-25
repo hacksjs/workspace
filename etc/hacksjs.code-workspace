@@ -74,6 +74,10 @@
       "path": "../../hacksjs.com"
     },
     {
+      "name": "hacksjs/logos",
+      "path": "../../logos"
+    },
+    {
       "name": "hacksjs/node",
       "path": "../../node"
     },
