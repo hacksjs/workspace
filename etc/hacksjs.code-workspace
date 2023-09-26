@@ -308,14 +308,16 @@
     // and reveal terminal errors for every project it does not. So we must explicitly
     // DISABLE the Jest extension for all repos in which it is not needed.
     "jest.disabledWorkspaceFolders": [
+      "hacksjs/__TODO__",
       "hacksjs/.github",
       "hacksjs/antora-ui",
       "hacksjs/decisions",
       "hacksjs/dev",
       "hacksjs/docs.hacksjs.com",
+      "hacksjs/hacksjs",
       "hacksjs/hacksjs.com",
+      "hacksjs/logos",
       "hacksjs/node",
-      "hacksjs/universal",
       "hacksjs/web",
       "hacksjs/workspace",
     ],
@@ -326,7 +328,7 @@
     // get forwarded tothe "jest" command.
     //
     // https://github.com/jest-community/vscode-jest#jestcommandline
-    "jest.jestCommandLine": "npm run test -- ",
+    "jest.jestCommandLine": "npm run test:unit -- ",
 
     // Settings for the ToDo Tree extension.
     // https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree
