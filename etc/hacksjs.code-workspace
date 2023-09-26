@@ -46,6 +46,10 @@
 
   "folders": [
     {
+      "name": "hacksjs/__TODO__",
+      "path": "../../__TODO__"
+    },
+    {
       "name": "hacksjs/.github",
       "path": "../../.github"
     },
