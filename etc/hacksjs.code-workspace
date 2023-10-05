@@ -70,6 +70,10 @@
       "path": "../../docs.hacksjs.com"
     },
     {
+      "name": "hacksjs/eslint-config",
+      "path": "../../eslint-config"
+    },
+    {
       "name": "hacksjs/hacksjs",
       "path": "../../hacksjs"
     },
@@ -314,6 +318,7 @@
       "hacksjs/decisions",
       "hacksjs/dev",
       "hacksjs/docs.hacksjs.com",
+      "hacksjs/eslint-config",
       "hacksjs/hacksjs",
       "hacksjs/hacksjs.com",
       "hacksjs/logos",
