@@ -9,6 +9,7 @@ start "Windows Terminal" wt.exe^
  new-tab --profile "Git Bash" --title "hacksjs/decisions"        -d "..\..\decisions";^
  new-tab --profile "Git Bash" --title "hacksjs/dev"              -d "..\..\dev";^
  new-tab --profile "Git Bash" --title "hacksjs/docs.hacksjs.com" -d "..\..\docs.hacksjs.com";^
+ new-tab --profile "Git Bash" --title "hacksjs/eslint-config"    -d "..\..\eslint-config";^
  new-tab --profile "Git Bash" --title "hacksjs/hacksjs"          -d "..\..\hacksjs";^
  new-tab --profile "Git Bash" --title "hacksjs/hacksjs.com"      -d "..\..\hacksjs.com";^
  new-tab --profile "Git Bash" --title "hacksjs/node"             -d "..\..\node";^
