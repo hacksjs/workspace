@@ -262,7 +262,7 @@
     "cSpell.customDictionaries": {
       "hacksjsDictionary": {
         "name": "Hacks.js Dictionary",
-        "path": "../var/cspell/dictionary.txt",
+        "path": "${workspaceFolder:hacksjs/workspace}/var/cspell/dictionary.txt",
         "scope": "workspace",
         "addWords": true
       }

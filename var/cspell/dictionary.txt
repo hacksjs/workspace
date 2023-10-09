@@ -43,6 +43,7 @@ hacksjs
 hateoas
 IIFE
 keychain
+Kieran
 lazygit
 lcov
 linebreak
