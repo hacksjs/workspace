@@ -74,10 +74,6 @@
       "path": "../../eslint-config"
     },
     {
-      "name": "hacksjs/hacksjs",
-      "path": "../../hacksjs"
-    },
-    {
       "name": "hacksjs/hacksjs.com",
       "path": "../../hacksjs.com"
     },
@@ -100,7 +96,7 @@
     {
       "name": "hacksjs/workspace",
       "path": "../../workspace"
-    },
+    }
   ],
 
   "launch": {
@@ -319,7 +315,6 @@
       "hacksjs/dev",
       "hacksjs/docs.hacksjs.com",
       "hacksjs/eslint-config",
-      "hacksjs/hacksjs",
       "hacksjs/hacksjs.com",
       "hacksjs/logos",
       "hacksjs/node",
