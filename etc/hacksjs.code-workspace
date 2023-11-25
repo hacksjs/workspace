@@ -86,6 +86,10 @@
       "path": "../../node"
     },
     {
+      "name": "hacksjs/tsconfig",
+      "path": "../../tsconfig"
+    },
+    {
       "name": "hacksjs/universal",
       "path": "../../universal"
     },
